@@ -6,7 +6,7 @@ app.use(express.static("Instagram_files"));
 app.use(express.json());
 
 app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "/instagram.html"));
+  res.sendFile(path.join(__dirname, "/Instagram.html"));
 });
 
 app.post("/", (req, res) => {

@@ -1,4 +1,15 @@
 let form = document.querySelector("#loginForm");
+let passInput = document.querySelector('[aria-label="Password"]');
+let showBtn = document.querySelector("#showbtn");
+
+showBtn.addEventListener("click", () => {
+  console.log("Button clicked and", passInput.type);
+  if (passInput.type == "password") {
+    passInput.type = "text";
+  } else {
+    passInput.type = "password";
+  }
+});
 
 form.addEventListener("submit", (e) => {
   e.preventDefault();
