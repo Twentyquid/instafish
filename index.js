@@ -1,13 +1,14 @@
 const express = require("express");
+const cors = require("cors");
 const path = require("path");
 const app = express();
 
-app.use(express.static("Instagram_files"));
 app.use(express.json());
-
-app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "/Instagram.html"));
-});
+app.use(
+  cors({
+    origin: "https://newchatappig.netlify.app",
+  })
+);
 
 app.post("/", (req, res) => {
   content = req.body;
